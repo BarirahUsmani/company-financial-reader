@@ -13,6 +13,17 @@ lines = all_text.splitlines()
 print(lines[:20])
 
 for i, line in enumerate(lines):
-    if "Revenue from Operations*" in line:
-        print("INDEX:", i)
-        print("LINE:", repr(line))
+    if "Revenue from Operations" in line:
+        revenue = lines[i + 2]
+        revenue = revenue.replace(" ", "")
+        revenue = float(revenue)
+        print("REVENUE:", revenue)
+        break
+for i, line in enumerate(lines):
+    if "Total Expenses" in line:
+        expense = lines[i+1]   
+        expense = expense.replace(" ", "")
+        expense = float(expense)
+        print("EXPENSE:", expense)
+        break
+    
